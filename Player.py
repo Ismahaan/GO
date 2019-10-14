@@ -1,5 +1,4 @@
-import Board
 class Player:
-    def __init__(self,player, color):
-        self.player = player
+    def __init__(self, color, board):
         self.color = color
+        self.board = board
