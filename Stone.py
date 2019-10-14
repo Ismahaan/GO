@@ -1,1 +1,1 @@
-class Stone():  
+class Stone:  
