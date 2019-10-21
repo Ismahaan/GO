@@ -1,7 +1,8 @@
+from Stone import Stone
 class Move:
-
+    
     def makeMove(self,color,board):
-        
+        print(board.printBoard)
         move = input('\n' + color + ', insert a move\n')
         
         position = {
@@ -15,6 +16,8 @@ class Move:
             'H' : 7,
             'I' : 8,
         }
-        iets =position[move]()
-        print(iets)
+        posx = position.get(move[0])
+        posy = int(move[1]) - 1
+        Stone(posx,posy,board,color)
+        
     #print(board.printBoard[iets][0])
