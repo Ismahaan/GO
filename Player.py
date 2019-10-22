@@ -7,6 +7,7 @@ class Player:
         self.board = board
         
     def askMove(self,otherPlayer):
+        
         self.move.makeMove(self.color, self.board)
         otherPlayer.askMove(self)
         

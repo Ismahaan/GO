@@ -19,7 +19,7 @@ class Board:
     
     def startGame(self,board):
         while True:
-            color = input("choose your color\n")
+            color = input("choose your color\n").lower()
             if color == 'white' or color == 'black':
                 break
             else:
