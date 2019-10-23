@@ -15,7 +15,7 @@ class Board:
                 self.printBoard[i][m] = cs + ns
         #print(self.printBoard)
             
-        self.playBoard =  np.full([9,9],None,dtype = object)    #board for actual game
+        self.playBoard =  np.full([9,9],'0',dtype = object)    #board for actual game
     
     def startGame(self,board):
         while True:

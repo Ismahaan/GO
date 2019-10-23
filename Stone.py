@@ -18,4 +18,5 @@ class Stone:
             board.printBoard[posx][posy] = 'bl'
         board.playBoard[posx][posy]=self
         print(self.freedom)
-        territory.getStone(posx,posy,color,self.freedom)
+        territory.getStone(posx,posy,color,self.freedom,board)
+        territory.checkFreedom()
