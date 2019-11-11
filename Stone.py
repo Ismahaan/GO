@@ -22,5 +22,8 @@ class Stone:
         board.playBoard[posx][posy]=self
         print(self.freedom)
         territory.getStone(self)
-        #territory.checkFreedom()
-        territory.checkFreedom(1,0,1,1,1,-1)
+        territory.checkFreedom(1,0,1,1,1,-1)# check beneath
+        territory.checkFreedom(-1,0,-1,-1,-1,1)# check above
+        territory.checkFreedom(0,1,1,1,-1,1)# check right 
+        territory.checkFreedom(0,-1,-1,-1,1,-1)# check left
+   
