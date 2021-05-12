@@ -6,25 +6,30 @@ class Stone:
         self.posy = posy
         self.color = color
         self.board = board
-        self.freedom = 4
+        initFreedom = []
+        
+        if posx != 0:
+            initFreedom.append(board.printBoard[posx-1][posy])
+        if posx != 8:
+            initFreedom.append(board.printBoard[posx+1][posy])
+        if posy != 0:
+            initFreedom.append(board.printBoard[posx][posy-1])
+        if posy != 8:
+            initFreedom.append(board.printBoard[posx][posy+1])
 
-        territory = Territory()
-        if posx == 0 or posx == 8:
-            self.freedom = self.freedom -1
-        if posy == 0 or posy == 8:
-            self.freedom = self.freedom -1
+        while 'bl' in initFreedom: initFreedom.remove('bl')
+        while 'wh' in initFreedom: initFreedom.remove('wh')
         
         if color == 'white': 
-            board.printBoard[posx][posy] = 'wh'
-            
+            board.printBoard[posx][posy] = 'wh'    
         else:
             board.printBoard[posx][posy] = 'bl'
         board.playBoard[posx][posy]=self
-        # print(self.freedom)
-        territory.getStone(self)
-        territory.checkFreedom(1,0,1,1,1,-1,False)# check beneath
-        territory.checkFreedom(-1,0,-1,-1,-1,1,False)# check above
-        territory.checkFreedom(0,1,1,1,-1,1,False)# check right 
-        territory.checkFreedom(0,-1,-1,-1,1,-1,True)# check left
+        print(initFreedom)
+        # territory.getStone(self)
+        # territory.checkFreedom(1,0,1,1,1,-1,False)# check beneath
+        # territory.checkFreedom(-1,0,-1,-1,-1,1,False)# check above
+        # territory.checkFreedom(0,1,1,1,-1,1,False)# check right 
+        # territory.checkFreedom(0,-1,-1,-1,1,-1,True)# check left
         
    
