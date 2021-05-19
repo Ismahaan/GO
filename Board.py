@@ -3,7 +3,11 @@ from Player import Player
 class Board:
     #for creating a 9 by 9 board with official positions
     def __init__(self):
+        self.whiteSet = []
+        self.blackSet = []
+
         self.printBoard = np.full([9,9],'++',dtype = object)        #board for commandline
+        self.emptyBoard = np.full([9,9],'++',dtype = object)
         
         charString = 'ABCDEFGHI'
         numString = '123456789'
@@ -13,8 +17,8 @@ class Board:
             for m in range (9):
                 ns = numString[m]
                 self.printBoard[i][m] = cs + ns
-        #print(self.printBoard)
-            
+                self.emptyBoard[i][m] = cs + ns
+           
         self.playBoard =  np.full([9,9],'0',dtype = object)    #board for actual game
     
     def startGame(self,board):
